@@ -1,4 +1,4 @@
-#include "args-parser/args-parser.h"
+#include "../../include/args-parser/args-parser.h"
 
 namespace crc {
     bool operator<(const ArgsParser::Option &op_1, const ArgsParser::Option &op_2) {
@@ -22,9 +22,9 @@ namespace crc {
     }
 
     void ArgsParser::_init_options() {
-        options.insert({ "compile", 'c' });
-        options.insert({ "build", 'b' });
-        options.insert({ "version", 'v' });
+        options.insert({ "compile", 'c', false });
+        options.insert({ "build", 'b', false });
+        options.insert({ "version", 'v', false });
     }
 
     std::string ArgsParser::_get_option(const char* arg) {
@@ -35,10 +35,12 @@ namespace crc {
     }
 
     void ArgsParser::_get_options(int argc, const char** argv) {
-        for (std::size_t i = 1; i < argc; ++i) {
+        for (int i = 1; i < argc; ++i) {
             if (argv[i][0] == '-') {  // this option
                 if (argv[i][1] == '-') {  // this name option
-                    options.find(_get_option(argv[i]))->is_call = true;
+                    auto const_pos = options.find(_get_option(argv[i]));
+                    auto pos = const_pos._M_const_cast();
+                    pos->is_call = true;
                 } else {  // this short name option
                 }
             }
