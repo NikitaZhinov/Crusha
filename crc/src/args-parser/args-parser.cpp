@@ -17,9 +17,9 @@ namespace crc {
             if (argv[i][0] == '-') {  // this option
                 try {
                     if (argv[i][1] == '-') {  // this name option
-                        _options.callOption(_get_option(argv[i]), argc, argv, i + 1);
+                        _options.callOption(_get_option(argv[i++]), argc, argv, i);
                     } else {  // this short name option
-                        _options.callOption(_get_option(argv[i]), argc, argv, i + 1);
+                        _options.callOption(argv[i++][1], argc, argv, i);
                     }
                 } catch (const std::runtime_error &err) {
                     std::println("Undefined option: {}", argv[i]);

@@ -8,7 +8,9 @@ namespace crc {
         std::println("CR Compiler version: {}", CRC_VERSION);
     }
 
-    void OptionList::_runCompile(const Option &option) {}
+    void OptionList::_runCompile(const Option &option) {
+        //
+    }
 
     void OptionList::_runBuild(const Option &option) {}
 
@@ -35,13 +37,13 @@ namespace crc {
         return _options;
     }
 
-    void OptionList::callOption(const std::string &option_name, int argc, const char** argv, int index) {
+    void OptionList::callOption(const std::string &option_name, int argc, const char** argv, int &index) {
         auto option = std::lower_bound(_options.begin(), _options.end(), option_name,
                                        [](const Option &op, const std::string &name) { return op.getName() < name; });
         _callOption(option, argc, argv, index);
     }
 
-    void OptionList::callOption(char option_short_name, int argc, const char** argv, int index) {
+    void OptionList::callOption(char option_short_name, int argc, const char** argv, int &index) {
         auto option = std::lower_bound(_options.begin(), _options.end(), option_short_name,
                                        [](const Option &op, char short_name) { return op.getShortName() < short_name; });
         _callOption(option, argc, argv, index);
