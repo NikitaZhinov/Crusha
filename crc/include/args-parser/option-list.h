@@ -9,9 +9,9 @@ namespace crc {
         std::vector<Option> _options;
 
         template <class ForwardIt> void _callVersion(ForwardIt option);
-        template <class ForwardIt> void _callCompile(ForwardIt option, int argc, const char** argv, int index);
-        template <class ForwardIt> void _callBuild(ForwardIt option, int argc, const char** argv, int index);
-        template <class ForwardIt> void _callOption(ForwardIt option, int argc, const char** argv, int index);
+        template <class ForwardIt> void _callCompile(ForwardIt option, int argc, const char** argv, int &index);
+        template <class ForwardIt> void _callBuild(ForwardIt option, int argc, const char** argv, int &index);
+        template <class ForwardIt> void _callOption(ForwardIt option, int argc, const char** argv, int &index);
 
         void _runVersion();
         void _runCompile(const Option &option);
@@ -23,8 +23,8 @@ namespace crc {
 
         auto getOptions();
 
-        void callOption(const std::string &option_name, int argc, const char** argv, int index);
-        void callOption(char option_short_name, int argc, const char** argv, int index);
+        void callOption(const std::string &option_name, int argc, const char** argv, int &index);
+        void callOption(char option_short_name, int argc, const char** argv, int &index);
 
         void runOptions();
     };
@@ -33,7 +33,7 @@ namespace crc {
         option->setCall(true);
     }
 
-    template <class ForwardIt> inline void OptionList::_callCompile(ForwardIt option, int argc, const char** argv, int index) {
+    template <class ForwardIt> inline void OptionList::_callCompile(ForwardIt option, int argc, const char** argv, int &index) {
         option->setCall(true);
         std::vector<std::string> files;
         files.reserve(argc - index);
@@ -41,14 +41,15 @@ namespace crc {
             files.push_back(argv[index]);
             ++index;
         }
+        --index;
         option->setFiles(std::move(files));
     }
 
-    template <class ForwardIt> inline void OptionList::_callBuild(ForwardIt option, int argc, const char** argv, int index) {
+    template <class ForwardIt> inline void OptionList::_callBuild(ForwardIt option, int argc, const char** argv, int &index) {
         _callCompile(option, argc, argv, index);
     }
 
-    template <class ForwardIt> inline void OptionList::_callOption(ForwardIt option, int argc, const char** argv, int index) {
+    template <class ForwardIt> inline void OptionList::_callOption(ForwardIt option, int argc, const char** argv, int &index) {
         if (option == _options.end()) {
             throw std::runtime_error("Undefined option");
         }

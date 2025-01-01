@@ -1,5 +1,8 @@
 #pragma once
 
 namespace crc {
-    class Lexer {};
+    class Lexer {
+    public:
+        Lexer() = default;
+    };
 }  // namespace crc
