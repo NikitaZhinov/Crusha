@@ -19,6 +19,4 @@ else()
     set(CMAKE_CXX_FLAGS_RELEASE "-O3")
 endif()
 
-add_executable(${PROJECT_NAME} "src/main.cpp" "include/args-parser/args-parser.h" "src/args-parser/args-parser.cpp")
-
-target_include_directories(${PROJECT_NAME} PRIVATE "include")
+add_executable(${PROJECT_NAME} "src/main.cpp" "include/args-parser/args-parser.h" "src/args-parser/args-parser.cpp"   "include/args-parser/option.h" "src/args-parser/option.cpp" "include/args-parser/option-list.h" "src/args-parser/option-list.cpp")
