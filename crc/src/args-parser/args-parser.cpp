@@ -34,7 +34,7 @@ namespace crc {
         }
     }
 
-    ArgsParser::ArgsParser(int argc, const char** argv) {
+    ArgsParser::ArgsParser(int argc, const char** argv) : _error(None) {
         _get_options(argc, argv);
     }
 
