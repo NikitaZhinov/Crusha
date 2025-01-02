@@ -27,7 +27,7 @@ namespace crc {
         return _is_call;
     }
 
-    auto Option::getFiles() const noexcept {
+    std::vector<std::string> Option::getFiles() const noexcept {
         return _files;
     }
 }  // namespace crc
