@@ -3,13 +3,17 @@
 #include <algorithm>
 #include <print>
 
+#include "../../include/lexer/lexer.h"
+
 namespace crc {
     void OptionList::_runVersion() {
         std::println("CR Compiler version: {}", CRC_VERSION);
     }
 
     void OptionList::_runCompile(const Option &option) {
-        //
+        for (const std::string &file_name : option.getFiles()) {
+            Lexer lexer(file_name);
+        }
     }
 
     void OptionList::_runBuild(const Option &option) {}

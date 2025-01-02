@@ -22,6 +22,6 @@ namespace crc {
         std::string getName() const noexcept;
         char getShortName() const noexcept;
         bool isCall() const noexcept;
-        auto getFiles() const noexcept;
+        std::vector<std::string> getFiles() const noexcept;
     };
 }  // namespace crc
