@@ -27,6 +27,7 @@ namespace crc {
         void _read_file();
 
     public:
+        Lexer() = default;
         Lexer(const std::string &file_name);
 
         static std::wstring getIndependentSymbols();
