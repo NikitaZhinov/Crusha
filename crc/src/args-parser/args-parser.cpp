@@ -22,19 +22,19 @@ namespace crc {
                         _options.callOption(argv[i++][1], argc, argv, i);
                     }
                 } catch (const std::runtime_error &err) {
-                    std::println("Undefined option: {}", argv[i]);
-                    _error = UndefineOption;
+                    Error::setTextError(std::format("Undefined option: {}", argv[i]));
+                    Error::setTypeError(Error::UndefineOption);
                     break;
                 }
             } else {
-                std::println("The expected option");
-                _error = UndefineOption;
+                Error::setTextError("The expected option");
+                Error::setTypeError(Error::UndefineOption);
                 break;
             }
         }
     }
 
-    ArgsParser::ArgsParser(int argc, const char** argv) : _error(None) {
+    ArgsParser::ArgsParser(int argc, const char** argv) {
         _get_options(argc, argv);
     }
 
@@ -42,15 +42,16 @@ namespace crc {
         return _options;
     }
 
-    ArgsParser::Error ArgsParser::getError() const {
-        return _error;
-    }
-
     void ArgsParser::runOptions() {
-        if (_error != None) {
+        if (Error::getTypeError() != Error::None) {
             return;
         }
 
-        _options.runOptions();
+        try {
+            _options.runOptions();
+        } catch (const std::runtime_error &ex) {
+            Error::setTextError(ex.what());
+            Error::setTypeError(Error::UndefineOption);
+        }
     }
 }  // namespace crc

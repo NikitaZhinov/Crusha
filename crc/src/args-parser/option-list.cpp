@@ -3,7 +3,7 @@
 #include <algorithm>
 #include <print>
 
-#include "../../include/lexer/lexer.h"
+#include "../../include/parser/parser.h"
 
 namespace crc {
     void OptionList::_runVersion() {
@@ -12,7 +12,7 @@ namespace crc {
 
     void OptionList::_runCompile(const Option &option) {
         for (const std::string &file_name : option.getFiles()) {
-            Lexer lexer(file_name);
+            Parser parser(file_name);
         }
     }
 
@@ -27,7 +27,7 @@ namespace crc {
         } else if (short_name == 'b') {
             _runBuild(option);
         } else {
-            throw std::runtime_error("Undefine option");
+            throw std::runtime_error(std::format("Еhere is no implementation for this option: --{} (-{})", option.getName(), option.getShortName()));
         }
     }
 

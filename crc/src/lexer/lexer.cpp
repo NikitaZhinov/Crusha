@@ -7,56 +7,78 @@ namespace crc {
     const std::wstring Lexer::SPECIAL_ALPHABET = L"<>!=+-*/";
     const std::wstring Lexer::SEPARATORS = L" \t\n";
 
-    void Lexer::_addIndependentSymbol(const wchar_t &c, token_t &token, token_line_t &token_line) {
+    void Lexer::_pushToken(token_t &token, token_line_t &token_line) {
         if (!token.empty()) {
-            token_line.push_back(std::move(token));
+            token_line.second.push_back(std::move(token));
+        }
+    }
+
+    void Lexer::_pushText(wchar_t &c, token_t &token, token_line_t &token_line) {
+        wchar_t start_quotation = c;
+        wchar_t prev_c = c;
+        while (!_file.eof()) {
+            c = _file.get();
+            if (prev_c != L'\\' && c == start_quotation) {
+                token.push_back(c);
+                break;
+            }
+            token.push_back(c);
+            prev_c = c;
+        }
+    }
+
+    void Lexer::_addIndependentSymbol(wchar_t &c, token_t &token, token_line_t &token_line) {
+        if (!token.empty()) {
+            _pushToken(token, token_line);
         }
         token.push_back(c);
-        token_line.push_back(std::move(token));
+        if (c == L'"' || c == L'\'') {
+            _pushText(c, token, token_line);
+        }
+        _pushToken(token, token_line);
     }
 
     void Lexer::_addSpecialAlphabet(const wchar_t &c, token_t &token, token_line_t &token_line) {
         if (!token.empty() && SPECIAL_ALPHABET.find(token.back()) == std::wstring::npos) {
-            token_line.push_back(std::move(token));
+            _pushToken(token, token_line);
         }
         token.push_back(c);
     }
 
-    void Lexer::_separator(const wchar_t &c, std::wstring &line, token_t &token, token_line_t &token_line) {
+    void Lexer::_separator(const wchar_t &c, token_t &token, token_line_t &token_line) {
         if (c == L'\n') {
-            _nextLine(line, token, token_line);
+            _nextLine(token, token_line);
         } else if (!token.empty()) {
-            token_line.push_back(std::move(token));
+            _pushToken(token, token_line);
         }
     }
 
-    void Lexer::_nextLine(std::wstring &line, token_t &token, token_line_t &token_line) {
-        token_line.push_back(std::move(token));
-        _token_list.push_back(std::pair<std::wstring, token_line_t>(std::move(line), std::move(token_line)));
+    void Lexer::_nextLine(token_t &token, token_line_t &token_line) {
+        _pushToken(token, token_line);
+        _token_list.push_back(std::move(token_line));
     }
 
     void Lexer::_read_file() {
         wchar_t c = 0;
         token_t token;
         token_line_t token_line;
-        std::wstring line;
 
         if (_file.is_open()) {
             while (!_file.eof()) {
                 c = _file.get();
-                line.push_back(c);
+                token_line.first.push_back(c);
                 if (INDEPENDENT_SYMBOLS.find(c) != std::wstring::npos) {
                     _addIndependentSymbol(c, token, token_line);
                 } else if (SPECIAL_ALPHABET.find(c) != std::wstring::npos) {
                     _addSpecialAlphabet(c, token, token_line);
                 } else if (SEPARATORS.find(c) != std::wstring::npos) {
-                    _separator(c, line, token, token_line);
+                    _separator(c, token, token_line);
                 } else {
                     token.push_back(c);
                 }
             }
 
-            _nextLine(line, token, token_line);
+            _nextLine(token, token_line);
             _file.close();
         } else {
             throw std::runtime_error("File is not found!");
@@ -83,7 +105,11 @@ namespace crc {
         return SEPARATORS;
     }
 
-    Lexer::token_file_t Lexer::getTokenList() const {
+    Lexer::token_list_t Lexer::getTokenList() const {
         return _token_list;
+    }
+
+    void Lexer::moveTokenList(token_list_t &token_list) {
+        token_list = std::move(_token_list);
     }
 }  // namespace crc
