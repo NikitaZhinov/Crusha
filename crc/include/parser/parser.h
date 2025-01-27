@@ -13,17 +13,16 @@ namespace crc {
         bool _isNameExistInFuncions(const token_t &token);
 
         void _setNameFuntion(const token_t &token);
+
         void _setStartArgsFunction(const token_t &token);
         void _setArgsFunction(const token_t &token);
-
         void _setNewArgFunction(const token_t &token);
-        void _setArgTypeOperatorFunction(const token_t &token);
-        void _setArgTypeFunction(const token_t &token);
         void _setArgNameFunction(const token_t &token);
         void _setEndArgsFunction(const token_t &token);
 
         void _setReturnTypeOperatorFunction(const token_t &token);
         void _setReturnTypeFunction(const token_t &token);
+
         void _setStartBlockFunction(const token_t &token);
         void _setBlockFunction(const token_t &token);
 

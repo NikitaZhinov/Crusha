@@ -92,7 +92,7 @@ QualifierOrder:
   - static
   - const
   - type
-ReferenceAlignment: Right
+ReferenceAlignment: Left
 RemoveBracesLLVM: false
 SeparateDefinitionBlocks: Always
 SortUsingDeclarations: Never

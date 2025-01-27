@@ -38,34 +38,20 @@ namespace crc {
     void Parser::_setArgsFunction(const token_t &token) {
         if (token == L")") {
             _functions.back().setExpected(Function::ReturnTypeOperator);
-        } else if (token == L"var") {
-            _functions.back().setExpected(Function::ArgTypeOperator);
+        } else if (Dictionary::isType(token)) {
+            _functions.back().addArg();
+            _functions.back().setArgType(Dictionary::getTypeId(token));
+            _functions.back().setExpected(Function::ArgName);
         } else {
             Error::setTypeError(Error::Sytax);
         }
     }
 
     void Parser::_setNewArgFunction(const token_t &token) {
-        if (token == L"var") {
-            _functions.back().setExpected(Function::ArgTypeOperator);
-        } else {
-            Error::setTypeError(Error::Sytax);
-        }
-    }
-
-    void Parser::_setArgTypeOperatorFunction(const token_t &token) {
-        if (token == L":") {
+        if (Dictionary::isType(token)) {
             _functions.back().addArg();
-            _functions.back().setExpected(Function::ArgType);
-        } else {
-            Error::setTypeError(Error::Sytax);
-        }
-    }
-
-    void Parser::_setArgTypeFunction(const token_t &token) {
-        Type::TypeId type = Type::getTypeId(token);
-        if (type != Type::Void) {
-            _functions.back().setArgType(type);
+            _functions.back().setArgType(Dictionary::getTypeId(token));
+            _functions.back().setExpected(Function::ArgName);
         } else {
             Error::setTypeError(Error::Sytax);
         }
@@ -104,8 +90,8 @@ namespace crc {
     }
 
     void Parser::_setReturnTypeFunction(const token_t &token) {
-        Type::TypeId type = Type::getTypeId(token);
-        if (type != Type::Void) {
+        Dictionary::TypeId type = Dictionary::getTypeId(token);
+        if (type != Dictionary::Void) {
             _functions.back().setReturnType(type);
         } else {
             Error::setTypeError(Error::Sytax);
@@ -123,6 +109,12 @@ namespace crc {
     void Parser::_setBlockFunction(const token_t &token) {
         if (token == L"}") {
             _functions.back().setExpected(Function::End);
+        } else {
+            std::vector<std::wstring> function_names;
+            for (const Function& func : _functions) {
+                function_names.push_back(func.getName());
+            }
+            _functions.back().addBlockToken(token, function_names);
         }
     }
 
@@ -137,10 +129,6 @@ namespace crc {
             _setArgsFunction(token);
         } else if (_functions.back().getExpected() == Function::NewArg) {
             _setNewArgFunction(token);
-        } else if (_functions.back().getExpected() == Function::ArgTypeOperator) {
-            _setArgTypeOperatorFunction(token);
-        } else if (_functions.back().getExpected() == Function::ArgType) {
-            _setArgTypeFunction(token);
         } else if (_functions.back().getExpected() == Function::ArgName) {
             _setArgNameFunction(token);
         } else if (_functions.back().getExpected() == Function::EndArgs) {

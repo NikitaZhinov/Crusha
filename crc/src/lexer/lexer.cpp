@@ -4,7 +4,7 @@
 
 namespace crc {
     const std::wstring Lexer::INDEPENDENT_SYMBOLS = L"&?;$#@^:\"'|.,(){}[]";
-    const std::wstring Lexer::SPECIAL_ALPHABET = L"<>!=+-*/";
+    const std::wstring Lexer::SPECIAL_ALPHABET = L"<>!=+-*/%";
     const std::wstring Lexer::SEPARATORS = L" \t\n";
 
     void Lexer::_pushToken(token_t &token, token_line_t &token_line) {

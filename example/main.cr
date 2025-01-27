@@ -1,11 +1,11 @@
-func sum(var: int a, var: int b) -> int {
-	return a + b;
+func sum(int a, int b, int c) -> int {
+	return a + b + c;
 }
 
 func
 diff
-(var: int a,
-			var: int b)
+(int a,
+			int b)
 ->
 int
 {
@@ -16,11 +16,11 @@ b
 }
 
 func main() -> int {
-	var a = 1;
-	var b = 2;
+	int a = 1;
+	int b = 2;
 
-	var: int c = sum(a, b);
-	var: int d = diff(a, b);
+	int c = sum(a, b, 10);
+	int d = diff(a, b);
 
-	return c * d;
+	return c * d - 10;
 }

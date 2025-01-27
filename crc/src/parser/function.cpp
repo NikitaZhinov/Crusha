@@ -3,8 +3,8 @@
 #include <stdexcept>
 
 namespace crc {
-    bool Function::_isArgExist(const std::wstring &name) {
-        for (const Argument &arg : _args) {
+    bool Function::_isArgExist(const std::wstring& name) {
+        for (const Argument& arg : _args) {
             if (arg.name == name) {
                 return true;
             }
@@ -12,38 +12,38 @@ namespace crc {
         return false;
     }
 
-    Function::Function() : _return_type(Type::Void), _expected(Name) {}
+    Function::Function() : _return_type(Dictionary::Void), _expected(Name) {}
 
-    Function::Function(const std::wstring &name) : _name(name), _return_type(Type::Void), _expected(Args) {}
+    Function::Function(const std::wstring& name) : _name(name), _return_type(Dictionary::Void), _expected(Args) {}
 
-    Function::Function(const std::wstring &name, const std::vector<Argument> args) :
+    Function::Function(const std::wstring& name, const std::vector<Argument> args) :
         _name(name),
         _args(args),
-        _return_type(Type::Void),
+        _return_type(Dictionary::Void),
         _expected(ReturnType) {}
 
-    Function::Function(const std::wstring &name, const std::vector<Argument> args, Type::TypeId return_type) :
+    Function::Function(const std::wstring& name, const std::vector<Argument> args, Dictionary::TypeId return_type) :
         _name(name),
         _args(args),
         _return_type(return_type),
         _expected(Block) {}
 
-    void Function::setName(const std::wstring &name) {
+    void Function::setName(const std::wstring& name) {
         _name = name;
         _expected = StartArgs;
     }
 
-    void Function::setArgs(const std::vector<Argument> &args) {
+    void Function::setArgs(const std::vector<Argument>& args) {
         _args = args;
         _expected = ReturnTypeOperator;
     }
 
-    void Function::setReturnType(Type::TypeId return_type) {
+    void Function::setReturnType(Dictionary::TypeId return_type) {
         _return_type = return_type;
         _expected = StartBlock;
     }
 
-    void Function::setBlock(const std::list<ParsingTree> &block) {
+    void Function::setBlock(const std::list<ParsingTree>& block) {
         _block = block;
         _expected = End;
     }
@@ -60,7 +60,7 @@ namespace crc {
         return _args;
     }
 
-    Type::TypeId Function::getReturnType() const {
+    Dictionary::TypeId Function::getReturnType() const {
         return _return_type;
     }
 
@@ -74,10 +74,10 @@ namespace crc {
 
     void Function::addArg() {
         _args.push_back(Argument());
-        _expected = ArgTypeOperator;
+        _expected = ArgName;
     }
 
-    void Function::setArgType(Type::TypeId type) {
+    void Function::setArgType(Dictionary::TypeId type) {
         if (_args.empty()) {
             throw std::runtime_error("the argument to which the type is assigned was not found");
         }
@@ -85,7 +85,7 @@ namespace crc {
         _expected = ArgName;
     }
 
-    void Function::setArgName(const std::wstring &name) {
+    void Function::setArgName(const std::wstring& name) {
         if (_args.empty()) {
             throw std::runtime_error("the argument to which the name is assigned was not found");
         }
@@ -96,9 +96,16 @@ namespace crc {
         _expected = EndArgs;
     }
 
-    void Function::addArg(const Argument &arg) {
+    void Function::addArg(const Argument& arg) {
         addArg();
         setArgType(arg.type);
         setArgName(arg.name);
+    }
+
+    void Function::addBlockToken(const Lexer::token_t& token, const std::vector<std::wstring>& function_names) {
+        if (_block.empty() || !_block.empty() && _block.back().isFull()) {
+            _block.push_back(ParsingTree());
+        }
+        _block.back().addToken(token, function_names);
     }
 }  // namespace crc
