@@ -1,0 +1,171 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/132.0.0.0 YaBrowser/25.2.0.0 Safari/537.36" version="26.1.1">
+  <diagram name="Страница — 1" id="euCMqOIXwwg2CqQMF-zP">
+    <mxGraphModel dx="1386" dy="783" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-86" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font&gt;CR&lt;/font&gt;&lt;/h1&gt;&lt;div&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;It is a compiled programming language with its own virtual runtime environment, which ensures memory safety and cross-platform compatibility. The language is aimed at ease of use and minimalism, thereby ensuring a low entry threshold and high speed of operation.&lt;/font&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="760" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-87" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Applications&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="1" vertex="1">
+          <mxGeometry x="40" y="200" width="760" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-88" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;CRC (CR Compiler)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;The CRС compiles the CR code into bytecode, which can later be executed by a virtual machine.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-87" vertex="1">
+          <mxGeometry x="10" y="50" width="740" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-89" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;CRVM (CR Virtual Machine)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;This is the runtime environment for CR bytecode. If the code has an entry point, then the code will be executed.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-87" vertex="1">
+          <mxGeometry x="10" y="160" width="740" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-90" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;CRBS (CR Build System)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;The build system allows you to quickly compile the source code and assemble it into an executable file, avoiding unnecessary actions.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-87" vertex="1">
+          <mxGeometry x="10" y="280" width="740" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-91" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;CRPM (CR Package Manager)&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 20px;&quot;&gt;The package manager allows you to use other people&#39;s libraries and frameworks in your projects, which can make it easier and faster to write code, and in some cases speed up the application.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-87" vertex="1">
+          <mxGeometry x="10" y="390" width="740" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-92" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;CRD (CR Debugger)&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;The debugger will allow you to stop your code at a certain line during execution, which will help you debug your code.&lt;/span&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-87" vertex="1">
+          <mxGeometry x="10" y="520" width="740" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-94" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Libraries&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="1" vertex="1">
+          <mxGeometry x="40" y="880" width="760" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-95" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;ArgsParser&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;This library is used to manage application options passed through command line arguments.&lt;/span&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-94" vertex="1">
+          <mxGeometry x="10" y="50" width="740" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-96" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;ErrorManager&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;Stores the error code and text.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-94" vertex="1">
+          <mxGeometry x="10" y="170" width="740" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-97" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Lexer&lt;/h1&gt;&lt;div&gt;&lt;span style=&quot;font-size: 20px;&quot;&gt;It is used to split the contents of a file into tokens for later use.&lt;/span&gt;&lt;/div&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-94" vertex="1">
+          <mxGeometry x="10" y="270" width="740" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-98" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;CRC Struct&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="1" vertex="1">
+          <mxGeometry x="840" y="200" width="760" height="600" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-101" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Option&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="qhUHqQQz3oVqzi-qmY4B-98" vertex="1">
+          <mxGeometry x="40" y="80" width="320" height="360" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-104" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Default&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Calls the Compiler.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-101" vertex="1">
+          <mxGeometry x="10" y="110" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-105" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Version&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;Print the compiler version.&lt;/span&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-101" vertex="1">
+          <mxGeometry x="10" y="190" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-125" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Determines what the compiler will do.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="qhUHqQQz3oVqzi-qmY4B-101" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-126" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Link&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;Calls the Linker.&lt;/span&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-101" vertex="1">
+          <mxGeometry x="10" y="278" width="300" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-102" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Compiler&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="qhUHqQQz3oVqzi-qmY4B-98" vertex="1">
+          <mxGeometry x="400" y="80" width="320" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-110" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Parser&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;It takes a list of tokens and builds an abstract syntax tree.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-102" vertex="1">
+          <mxGeometry x="10" y="134" width="300" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-111" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;SyntaxAnalizer&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;Checks the code for syntax errors.&lt;/span&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-102" vertex="1">
+          <mxGeometry x="10" y="230" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-113" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;It uses a Lexer to split the source code into tokens, a Parser to build an AST, and a Translator to build a bytecode that will later be written to a file.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="qhUHqQQz3oVqzi-qmY4B-102" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-143" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Translator&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Translates the AST into a byte code.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-102" vertex="1">
+          <mxGeometry x="10" y="314" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-127" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Linker&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="qhUHqQQz3oVqzi-qmY4B-98" vertex="1">
+          <mxGeometry x="40" y="460" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-130" value="&lt;span style=&quot;text-align: left;&quot;&gt;&lt;font style=&quot;font-size: 13px;&quot;&gt;Builds all previously compiled files into an executable file.&lt;/font&gt;&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="qhUHqQQz3oVqzi-qmY4B-127" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-133" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.001;entryY=0.059;entryDx=0;entryDy=0;entryPerimeter=0;" parent="qhUHqQQz3oVqzi-qmY4B-98" source="qhUHqQQz3oVqzi-qmY4B-104" target="qhUHqQQz3oVqzi-qmY4B-102" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-142" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" parent="qhUHqQQz3oVqzi-qmY4B-98" source="qhUHqQQz3oVqzi-qmY4B-126" target="qhUHqQQz3oVqzi-qmY4B-127" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="380" y="400" />
+              <mxPoint x="380" y="490" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-114" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;CRVM Struct&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="1" vertex="1">
+          <mxGeometry x="1640" y="200" width="760" height="440" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-122" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Option&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="qhUHqQQz3oVqzi-qmY4B-114" vertex="1">
+          <mxGeometry x="40" y="80" width="320" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-123" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Default&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Calls the Translator.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-122" vertex="1">
+          <mxGeometry x="10" y="110" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-134" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;Version&lt;/h1&gt;&lt;p&gt;&lt;span style=&quot;font-size: 15px;&quot;&gt;Print the compiler version.&lt;/span&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="qhUHqQQz3oVqzi-qmY4B-122" vertex="1">
+          <mxGeometry x="10" y="190" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-135" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Determines what the compiler will do.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="qhUHqQQz3oVqzi-qmY4B-122" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-136" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Translator&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="qhUHqQQz3oVqzi-qmY4B-114" vertex="1">
+          <mxGeometry x="400" y="80" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-139" value="&lt;font style=&quot;font-size: 13px;&quot;&gt;Calls the commands written in the executable file one at a time.&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;" parent="qhUHqQQz3oVqzi-qmY4B-136" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="qhUHqQQz3oVqzi-qmY4B-140" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=-0.005;entryY=0.08;entryDx=0;entryDy=0;entryPerimeter=0;" parent="qhUHqQQz3oVqzi-qmY4B-114" source="qhUHqQQz3oVqzi-qmY4B-123" target="qhUHqQQz3oVqzi-qmY4B-136" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-1" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;ArgsParser Struct&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="1" vertex="1">
+          <mxGeometry x="840" y="880" width="760" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-17" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;ArgsParser&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="Yz7u7UWnPbbF_qGHt3fh-1" vertex="1">
+          <mxGeometry x="40" y="80" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-18" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: transparent; font-size: 13px;&quot;&gt;Receives command line arguments and invokes&amp;nbsp;&lt;/span&gt;&lt;span style=&quot;background-color: transparent; font-size: 13px; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;certain options.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="Yz7u7UWnPbbF_qGHt3fh-17" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-19" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Option&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="Yz7u7UWnPbbF_qGHt3fh-1" vertex="1">
+          <mxGeometry x="401" y="80" width="320" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-21" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;IOption&lt;/h1&gt;&lt;p&gt;&lt;font style=&quot;font-size: 15px;&quot;&gt;Interface for options.&lt;/font&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="Yz7u7UWnPbbF_qGHt3fh-19" vertex="1">
+          <mxGeometry x="10" y="120" width="300" height="78" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-32" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Defines the interface for the options that can be invoked.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="Yz7u7UWnPbbF_qGHt3fh-19" vertex="1">
+          <mxGeometry x="10" y="52" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-22" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;ErrorManager Struct&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="1" vertex="1">
+          <mxGeometry x="1640" y="880" width="400" height="240" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-23" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;ErrorManager&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="Yz7u7UWnPbbF_qGHt3fh-22" vertex="1">
+          <mxGeometry x="40" y="80" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-24" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Defined a list of errors and stops the program if an error is caused.&lt;/span&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="Yz7u7UWnPbbF_qGHt3fh-23" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-27" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Lexer Struct&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="1" vertex="1">
+          <mxGeometry x="2080" y="880" width="760" height="400" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-28" value="&lt;font style=&quot;font-size: 20px;&quot;&gt;Lexer&lt;/font&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="Yz7u7UWnPbbF_qGHt3fh-27" vertex="1">
+          <mxGeometry x="40" y="80" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="Yz7u7UWnPbbF_qGHt3fh-29" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Splits the contents of the file into tokens.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="Yz7u7UWnPbbF_qGHt3fh-28" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xfCtFYRGQaIi9m-alUmZ-1" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;Token&lt;/span&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="Yz7u7UWnPbbF_qGHt3fh-27" vertex="1">
+          <mxGeometry x="401" y="80" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xfCtFYRGQaIi9m-alUmZ-2" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Defines the token structure.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="xfCtFYRGQaIi9m-alUmZ-1" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xfCtFYRGQaIi9m-alUmZ-3" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;TokenLine&lt;/span&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="Yz7u7UWnPbbF_qGHt3fh-27" vertex="1">
+          <mxGeometry x="40" y="240" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xfCtFYRGQaIi9m-alUmZ-4" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;Defines a string of tokens.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="xfCtFYRGQaIi9m-alUmZ-3" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="xfCtFYRGQaIi9m-alUmZ-5" value="&lt;span style=&quot;font-size: 20px;&quot;&gt;CombiningToken&lt;/span&gt;" style="swimlane;whiteSpace=wrap;html=1;startSize=40;" parent="Yz7u7UWnPbbF_qGHt3fh-27" vertex="1">
+          <mxGeometry x="401" y="240" width="320" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="xfCtFYRGQaIi9m-alUmZ-6" value="&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;font-size: 13px;&quot;&gt;&amp;nbsp;Defines the combining tokens.&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=center;" parent="xfCtFYRGQaIi9m-alUmZ-5" vertex="1">
+          <mxGeometry x="10" y="50" width="300" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
