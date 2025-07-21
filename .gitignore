@@ -1,6 +1,9 @@
-build
+﻿build
 out
 .vs
 .vscode
 .cache
 bin
+vcpkg_installed
+docs
+*.bkp

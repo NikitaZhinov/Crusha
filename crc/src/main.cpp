@@ -1,9 +1,14 @@
-#include "../include/args-parser/args-parser.h"
+#include <option/option.h>
+
+#include <print>
 
 int main(int argc, const char** argv) {
-    crc::ArgsParser args_parser(argc, argv);
-    args_parser.runOptions();
+    args::ArgsParser args_parser(argc, argv);
 
-    crc::Error::printError();
-    return crc::Error::getTypeError();
+    args_parser.addOption<crc::option::Default>();
+    args_parser.addOption<crc::option::Version>();
+
+    args_parser.callOptions();
+
+    return 0;
 }

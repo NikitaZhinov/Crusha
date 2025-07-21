@@ -1,13 +1,11 @@
-func sum(int a, int b, int c) -> int {
+﻿int sum(int a, int b, int c) {
 	return a + b + c;
 }
 
-func
+int
 diff
 (int a,
 			int b)
-->
-int
 {
 	return a
 	-
@@ -15,7 +13,7 @@ b
 ;
 }
 
-func main() -> int {
+int main() {
 	int a = 1;
 	int b = 2;
 
