@@ -1,12 +1,31 @@
-﻿#pragma once
+#pragma once
 
-#include <error-manager/error-manager.h>
+#include "ast.h"
+
 #include <lexer/lexer.h>
 
-#include <string>
+#include <format>
+#include <optional>
+#include <expected>
 
 namespace crc {
-    void analyseTokens(const std::vector<lexer::TokenLine>& tokens);
+    class Compiler {
+        const std::vector<std::wstring> SPECIAL_ALPHABETS;
+        const std::wstring INDIVIDUAL_CHARS;
+        const std::vector<lexer::CombiningTokens> COMBINING_TOKENS;
+        const std::wstring SEPARATORS;
 
-    void compile(error::ErrorManager& error_manager, const char* file_name);
+        lexer::Lexer _lexer;
+
+        std::expected<std::vector<lexer::TokenLine>, std::string>
+        _runLexer(const char* file_name);
+
+        std::expected<AST, std::string>
+        _buildAST(const std::vector<lexer::TokenLine>& tokens);
+
+    public:
+        Compiler();
+
+        std::optional<std::string> compile(const char* file_name);
+    };
 }  // namespace crc

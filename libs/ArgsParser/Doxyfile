@@ -1,3 +1,0 @@
-﻿PROJECT_NAME = "ArgsParser"
-OUTPUT_DIRECTORY = "docs"
-INPUT = include/args-parser

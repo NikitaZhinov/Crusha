@@ -1,3 +1,0 @@
-﻿PROJECT_NAME = "ErrorManager"
-OUTPUT_DIRECTORY = "docs"
-INPUT = include/error-manager

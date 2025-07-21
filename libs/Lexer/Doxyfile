@@ -1,3 +1,0 @@
-﻿PROJECT_NAME = "Lexer"
-OUTPUT_DIRECTORY = "docs"
-INPUT = include/lexer
