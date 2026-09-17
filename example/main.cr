@@ -1,26 +1,17 @@
-func sum(var: int a, var: int b) -> int {
-	return a + b;
+func sum(let a: Int, let b: Int, let c: Int) -> Int {
+	return a + b * c;
 }
 
-func
-diff
-(var: int a,
-			var: int b)
-->
-int
-{
-	return a
-	-
-b
-;
+func diff(let a: Int, let b: Int) -> Int {
+	return a - b;
 }
 
-func main() -> int {
-	var a = 1;
-	var b = 2;
+func main() -> Int {
+	let a: Int = new Int(1);
+	let b: Int = 2.5;
 
-	var: int c = sum(a, b);
-	var: int d = diff(a, b);
+	let c: Int = sum(a, b, 10);
+	let d = diff(a, b);
 
-	return c * d;
+	return c * d - 10;
 }

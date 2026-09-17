@@ -1,2 +1,2 @@
-# CR
+# Crusha
 Programming language

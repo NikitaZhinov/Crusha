@@ -1,6 +1,0 @@
-TARGET = exemaple
-SRC = main.cr
-
-set_build_folder: bin
-
-add_executable: $TARGET $SRC

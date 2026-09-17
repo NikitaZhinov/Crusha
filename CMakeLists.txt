@@ -1,5 +1,5 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.31)
 
-project(CR VERSION 0.0.1)
+project(Crusha)
 
 add_subdirectory(crc)

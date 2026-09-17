@@ -1,6 +1,7 @@
+BasedOnStyle: LLVM
 AccessModifierOffset: -4
 IndentWidth: 4
-ColumnLimit: 150
+ColumnLimit: 110
 SortIncludes: Never
 IndentPPDirectives: BeforeHash
 AlignConsecutiveMacros:
@@ -92,7 +93,7 @@ QualifierOrder:
   - static
   - const
   - type
-ReferenceAlignment: Right
+ReferenceAlignment: Left
 RemoveBracesLLVM: false
 SeparateDefinitionBlocks: Always
 SortUsingDeclarations: Never
