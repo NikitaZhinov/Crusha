@@ -1,9 +1,12 @@
 ﻿build
 out
+docs
 .vs
 .vscode
 .cache
 bin
 vcpkg_installed
-docs
 *.bkp
+*.pdb
+CMakeUserPresets.json
+.clangd

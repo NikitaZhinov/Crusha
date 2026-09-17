@@ -1,19 +1,15 @@
-cmake_minimum_required(VERSION 3.20)
+cmake_minimum_required(VERSION 3.31)
 
-project(Dependencies)
+project(CrushaDependencies)
 
-include(FetchContent)
+if (WIN32)
+	include(FetchContent)
+    FetchContent_Declare(winflexbison
+        URL https://github.com/lexxmark/winflexbison/releases/download/v2.5.25/win_flex_bison-2.5.25.zip)
+    FetchContent_MakeAvailable(winflexbison)
+    set(FLEX_EXECUTABLE "${winflexbison_SOURCE_DIR}/win_flex.exe" CACHE FILEPATH "" FORCE)
+    set(BISON_EXECUTABLE "${winflexbison_SOURCE_DIR}/win_bison.exe" CACHE FILEPATH "" FORCE)
+    set(WinFlexBisonSourseDir ${winflexbison_SOURCE_DIR} CACHE FILEPATH "" FORCE)
+endif()
 
-FetchContent_Declare(
-  ArgsParser
-  GIT_REPOSITORY "https://github.com/NikitaZhinov/ArgsParser"
-  GIT_TAG v2.0.1
-)
-FetchContent_MakeAvailable(ArgsParser)
-
-FetchContent_Declare(
-  UniversalLexer
-  GIT_REPOSITORY "https://github.com/NikitaZhinov/UniversalLexer"
-  GIT_TAG v1.1.1
-)
-FetchContent_MakeAvailable(UniversalLexer)
+add_subdirectory("options")

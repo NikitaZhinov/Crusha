@@ -1,6 +1,7 @@
-﻿AccessModifierOffset: -4
+BasedOnStyle: LLVM
+AccessModifierOffset: -4
 IndentWidth: 4
-ColumnLimit: 90
+ColumnLimit: 110
 SortIncludes: Never
 IndentPPDirectives: BeforeHash
 AlignConsecutiveMacros:

@@ -1,0 +1,8 @@
+class Int {
+	ctor(#int);
+
+	static Int operator+(let l: Int, let r: Int);
+	static Int operator-(let l: Int, let r: Int);
+	static Int operator*(let l: Int, let r: Int);
+	static Int operator/(let l: Int, let r: Int);
+}
